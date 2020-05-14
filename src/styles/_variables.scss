@@ -1,0 +1,124 @@
+$pms-property-color: #004085;
+$pms-owner-color: #17a2b8;
+$pms-renter-color: #114b38;
+$pms-payment-color: #009688;
+$pms-project-color: #f39c12;
+$pms-expense-color: #c62f3e;
+$pms-apartment-color: #a72da3;
+$pms-maisonette-color: #bf1818;
+$pms-office-color: #d68000;
+$pms-building-color: #3079d8;
+$pms-warehouse-color: #8b3b10;
+$pms-land-color: #17801f;
+$pms-white-color: #ffffff;
+$pms-dark-gray-color: #484848;
+
+$pms-favorite-color: #009688;
+
+:root {
+  --favorite: $pms-favorite-color;
+}
+
+.pms-box- {
+  &properties {
+    background-color: $pms-property-color;
+    color: $pms-white-color;
+  }
+  &owners {
+    background-color: $pms-owner-color;
+    color: $pms-white-color;
+  }
+  &payments {
+    background-color: $pms-payment-color;
+    color: $pms-white-color;
+  }
+  &expenses {
+    background-color: $pms-expense-color;
+    color: $pms-white-color;
+  }
+  &renters {
+    background-color: $pms-renter-color;
+    color: $pms-white-color;
+  }
+  &projects {
+    background-color: $pms-project-color;
+    color: $pms-white-color;
+  }
+  &favorites {
+    background-color: $pms-favorite-color;
+    color: $pms-white-color;
+  }
+}
+
+.pms-text- {
+  &properties {
+    color: $pms-property-color;
+  }
+  &owners {
+    color: $pms-owner-color;
+  }
+  &renters {
+    color: $pms-renter-color;
+  }
+  &payments {
+    color: $pms-payment-color;
+  }
+  &projects {
+    color: $pms-project-color;
+  }
+  &expenses {
+    color: $pms-expense-color;
+  }
+  &favorites {
+    color: $pms-favorite-color;
+  }
+  &apartment {
+    color: $pms-apartment-color;
+  }
+
+  &maisonette {
+    color: $pms-maisonette-color;
+  }
+
+  &office {
+    color: $pms-office-color;
+  }
+  &land {
+    color: $pms-land-color;
+  }
+
+  &building {
+    color: $pms-building-color;
+  }
+
+  &warehouse {
+    color: $pms-warehouse-color;
+  }
+}
+
+.pms-btn-outline- {
+  &owners {
+    color: $pms-owner-color;
+    border-color: $pms-owner-color;
+  }
+  &properties {
+    color: $pms-property-color;
+    border-color: $pms-renter-color;
+  }
+  &expenses {
+    color: $pms-expense-color;
+    border-color: $pms-renter-color;
+  }
+  &renters {
+    color: $pms-renter-color;
+    border-color: $pms-renter-color;
+  }
+  &projects {
+    color: $pms-project-color;
+    border-color: $pms-renter-color;
+  }
+  &payments {
+    color: $pms-payment-color;
+    border-color: $pms-renter-color;
+  }
+}

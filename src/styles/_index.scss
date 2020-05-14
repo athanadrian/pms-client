@@ -1,0 +1,61 @@
+@import './variables.scss';
+@import './Forms.scss';
+@import './components/SmallBox.scss';
+@import './components/RentalCard.scss';
+@import './components/PageLoading.scss';
+@import './pages/Footer.scss';
+@import './pages/MenuSidebar.scss';
+@import './containers/OwnersList.scss';
+@import './containers/RentalsList.scss';
+@import './containers/RentalDetails.scss';
+
+.pms-container {
+  padding-top: 70px;
+}
+
+.list-title {
+  display: flex;
+  align-items: center;
+  h1 {
+    margin-right: 20px;
+  }
+  i {
+    margin-right: 5px;
+  }
+}
+
+.pms-table-text-owners {
+  td {
+    a {
+      color: $pms-owner-color;
+    }
+  }
+}
+
+.pms-table-text-renters {
+  td {
+    a {
+      color: $pms-renter-color;
+    }
+  }
+}
+
+.btn {
+  &.btn-pms-main {
+    border-color: $pms-favorite-color;
+    color: $pms-favorite-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $pms-favorite-color;
+      border-color: $pms-favorite-color;
+      color: white;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      cursor: no-drop;
+    }
+  }
+}
