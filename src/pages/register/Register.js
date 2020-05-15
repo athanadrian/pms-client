@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import RegisterForm from '../../components/forms/RegisterForm';
 import ApiError from '../../components/forms/ApiError';
 import { registerUser } from '../../actions';
@@ -12,9 +13,12 @@ const PmsRegister = () => {
     registerUser(data)
       .then(() => {
         setRedirect(true);
+        toast.success('Registration is success');
+        toast.success('Login to enter');
       })
       .catch((errs) => {
         setErrors(errs);
+        errs.map((e) => toast.error(e.message) || 'Failed');
       });
   };
 

@@ -7,8 +7,8 @@ const ApiError = ({ errors }) => {
   if (errors && errors.length) {
     return (
       <div className="alert alert-danger">
-        {errors.map(({ message }, i) => (
-          <p key={i}>{message}</p>
+        {errors.map(({ message }) => (
+          <p key={message}>{message}</p>
         ))}
       </div>
     );
@@ -16,9 +16,11 @@ const ApiError = ({ errors }) => {
   return null;
 };
 
-// ApiError.propTypes = {
-//   errors:
-//   ]).isRequired
-// };
+ApiError.propTypes = {
+  errors: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default ApiError;

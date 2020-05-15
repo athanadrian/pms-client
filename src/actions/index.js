@@ -73,6 +73,13 @@ export const fetchRentalById = (rentalId) => async (dispatch) => {
   });
 };
 
+export const unMountRental = () => {
+  return {
+    type: ActionTypes.UNMOUNT_RENTAL,
+    rental: {}
+  };
+};
+
 export const fetchRenters = () => {
   return {
     type: ActionTypes.FETCH_RENTERS,

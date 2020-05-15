@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import LoginForm from '../../components/forms/LoginForm';
 import ApiError from '../../components/forms/ApiError';
 import { withAuth } from '../../providers/AuthProvider';
 
 const Login = ({ auth, location: { state } }) => {
   const { message } = state || '';
-  console.log('location', state);
   const [isRedirect, setRedirect] = useState(false);
   const [errors, setErrors] = useState([]);
 
   const loginByAuth = (data) => {
     auth
       .loginByAuth(data)
-      .then(() => setRedirect(true))
+      .then(() => {
+        setRedirect(true);
+        toast.success('You have logged in Successfully!');
+      })
       .catch((errs) => {
         setErrors(errs);
+        errs.map((e) => toast.error(e.message) || 'Failed');
       });
   };
 

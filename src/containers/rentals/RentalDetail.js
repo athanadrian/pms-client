@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import TomMap from '../../components/map/TomMap';
 import { fetchRentalById } from '../../actions';
 import PageLoading from '../../components/page-loading/PageLoading';
 import RentalInfo from '../../components/rental/RentalInfo';
@@ -11,9 +12,14 @@ const RentalDetail = ({ dispatch, rental, isFetchingRental }) => {
 
   useEffect(() => {
     dispatch(fetchRentalById(id));
+    return () => dispatch({ type: 'UNMOUNT_RENTAL' });
   }, [dispatch, id]);
 
-  const { title, image } = rental;
+  const { title, image, city, street } = rental;
+
+  const location = () => {
+    return city && street && `${city}, ${street}`;
+  };
 
   let template;
 
@@ -26,10 +32,10 @@ const RentalDetail = ({ dispatch, rental, isFetchingRental }) => {
           <div className="upper-section">
             <div className="row">
               <div className="col-md-6">
-                <img src={image} alt={title} />
+                <img className="rental-img" src={image} alt={title} />
               </div>
               <div className="col-md-6">
-                <img src={image} alt={title} />
+                <TomMap location={location()} />
               </div>
             </div>
           </div>
@@ -52,7 +58,9 @@ RentalDetail.propTypes = {
   rental: PropTypes.shape({
     _id: PropTypes.string,
     title: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.string,
+    city: PropTypes.string,
+    street: PropTypes.string
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
   isFetchingRental: PropTypes.bool.isRequired

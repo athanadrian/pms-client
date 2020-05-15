@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Header from './header/Header';
 import Footer from './footer/Footer';
@@ -7,7 +7,7 @@ import PageLoading from '../../components/page-loading/PageLoading';
 
 const Main = ({ children }) => {
   // const { onUserLoad } = props;
-  const [appLoading, setAppLoading] = useState(false);
+  const [appLoading] = useState(false);
 
   // useEffect(() => {
   //   setAppLoading(true);

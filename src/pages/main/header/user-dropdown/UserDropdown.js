@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
-import * as ActionTypes from '../../../../store/actions';
+// import * as ActionTypes from '../../../../store/actions';
 import { useAuth } from '../../../../providers/AuthProvider';
 
 const UserDropdown = ({ username, isAuth }) => {
@@ -14,7 +14,7 @@ const UserDropdown = ({ username, isAuth }) => {
   // };
   const authService = useAuth();
   const dropdownRef = useRef(null);
-  const history = useHistory();
+  // const history = useHistory();
 
   const [dropdownState, updateDropdownState] = useState({
     isDropdownOpen: false
